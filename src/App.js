@@ -1,25 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Header from "./components/layouts/header";
+import Footer from "./components/layouts/footer";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import {
+  faCheckSquare,
+  faUserCircle,
+  faHome,
+  faAngleDown,
+  faProjectDiagram,
+  faMobile,
+  faBriefcase,
+  faUserTie,
+  faEnvelope,
+  faLaptopCode,
+  faCode,
+  faAddressCard,
+  faDownload
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(
+  fab,
+  faCheckSquare,
+  faUserCircle,
+  faHome,
+  faAngleDown,
+  faProjectDiagram,
+  faMobile,
+  faBriefcase,
+  faUserTie,
+  faEnvelope,
+  faLaptopCode,
+  faCode,
+  faAddressCard,
+  faDownload
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <Route path="/" component={Header} />
+        </header>
+        <Route path="/" component={Footer} />
+      </div>
+    </Router>
   );
 }
 
